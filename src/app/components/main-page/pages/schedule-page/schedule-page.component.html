@@ -1,0 +1,35 @@
+<div class="schedule">
+
+  <div class="content">
+    <div class="row">
+      <div class="column">
+        <h5>Tim van der Steen</h5>
+        <h1>Schedule</h1>
+        <a *ngIf="isAdmin()" class="page-btn" (click)="scheduleDialogService.ShowAddScheduleDialog()" type="button">New Match</a>
+      </div>
+      <div class="column video">
+        <video onclick="play(event)">
+          <source src="assets/Videos/oosterijkhole18.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="schedule-container">
+  <div class="schedule-title">
+    <h1>Schedule</h1>
+  </div>
+  <div class="schedule-content">
+    <app-upcoming-game-item *ngFor="let gameEl of upcomingGamesList" [tournooi]="gameEl"></app-upcoming-game-item>
+  </div>
+</div>
+
+<div class="footer">
+  <app-footer></app-footer>
+</div>
+
+<app-add-schedule-dialog *ngIf="scheduleDialogService.showAddScheduleDialog"></app-add-schedule-dialog>
+

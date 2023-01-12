@@ -1,0 +1,66 @@
+<div class="overlay" (click)="productDialogService.HideEditProductDialog()"></div>
+
+<div id="container" >
+  <div id="header">
+    Edit Product
+  </div>
+  <div id="content">
+    <form [formGroup]="editProductForm">
+      <div class="content-container">
+        <div class="user-input-box">
+          <label for="naam">Naam</label>
+          <input type="text"
+                 id="naam"
+                 name="naam"
+                 placeholder="{{productDialogService.productToEdit.name}}"
+                 formControlName="productName"/>
+        </div>
+        <div class="user-input-box">
+          <label for="beschrijving">Beschrijving</label>
+          <input type="text"
+                 id="beschrijving"
+                 name="beschrijving"
+                 placeholder="{{productDialogService.productToEdit.beschrijving}}"
+                 formControlName="productDescription"/>
+        </div>
+        <div class="user-input-box">
+          <label for="kleur">Kleur</label>
+          <input type="text"
+                 id="kleur"
+                 name="kleur"
+                 placeholder="{{productDialogService.productToEdit.kleur}}"
+                 formControlName="productColor"/>
+        </div>
+        <div class="user-input-box">
+          <label for="icon">Icon</label>
+          <input type="text"
+                 id="icon"
+                 name="icon"
+                 placeholder="{{productDialogService.productToEdit.icon}}"
+                 formControlName="productIcon"/>
+        </div>
+        <div class="user-input-box">
+          <label for="eenheid">Eenheid</label>
+          <input type="text"
+                 id="eenheid"
+                 name="eenheid"
+                 placeholder="{{productDialogService.productToEdit.eenheid}}"
+                 formControlName="productEenheid"/>
+        </div>
+        <div class="user-input-box">
+          <label for="prijs">Prijs</label>
+          <input type="number"
+                 id="prijs"
+                 name="prijs"
+                 placeholder="{{productDialogService.productToEdit.price}}"
+                 formControlName="productPrice"/>
+        </div>
+      </div>
+      <div id="actions">
+        <a class="page-btn cancel" type="button" (click)="productDialogService.HideEditProductDialog()">Cancel</a>
+        <a class="page-btn" type="button" (click)="editProductAction(editProductForm.value)">Confirm</a>
+      </div>
+    </form>
+  </div>
+
+</div>

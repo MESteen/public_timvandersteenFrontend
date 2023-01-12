@@ -1,0 +1,31 @@
+<div class="page-background">
+  <div class="form-structor">
+    <div class="signup">
+      <form id="signup-form" [formGroup]="signupForm" (ngSubmit)="UserSignUp(signupForm.value)" [class.active] = "tabSelected == loginSignupEnum.SIGNUP">
+        <h2 class="form-title"><span>or</span>Sign up</h2>
+        <div class="form-holder signup-form">
+          <input formControlName="username" type="text" class="input" placeholder="Username" />
+          <input formControlName="email" type="email" class="input" placeholder="Email" />
+          <input formControlName="name" type="text" class="input" placeholder="Name" />
+          <input formControlName="password" type="password" class="input" placeholder="Password" />
+          <input formControlName="phone" type="text" class="input" placeholder="Phone" />
+        </div>
+        <button data-submit class="submit-btn">Sign up</button>
+      </form>
+      <form id="login-form" [formGroup]="loginForm" (ngSubmit)="UserLogin(loginForm.value)" [class.active] = "tabSelected == loginSignupEnum.LOGIN">
+        <h2 class="form-title" ><span>or</span>Log in</h2>
+        <div class="form-holder">
+          <input formControlName="username" type="text" class="input" placeholder="Username" />
+          <input  formControlName="password"  type="password" class="input" placeholder="Password" />
+        </div>
+        <button class="submit-btn" data-submit>Log in</button>
+      </form>
+    </div>
+    <div class="login slide-up" >
+      <div class="center">
+        <h2 class="form-title" id="login" [class.active] = "tabSelected == loginSignupEnum.SIGNUP" (click)="OnClickLoginSingup(loginSignupEnum.LOGIN)"><span>or</span>Log in</h2>
+        <h2 class="form-title" id="signup" [class.active] = "tabSelected == loginSignupEnum.LOGIN" (click)="OnClickLoginSingup(loginSignupEnum.SIGNUP)"><span>or</span>Sign up</h2>
+      </div>
+    </div>
+  </div>
+</div>

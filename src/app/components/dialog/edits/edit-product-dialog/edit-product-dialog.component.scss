@@ -1,0 +1,23 @@
+@import "../../../../styles/dialog_style";
+
+.user-input-box{
+  width: 250px;
+
+  label{
+    width: 95%;
+    color: black;
+    opacity: 0.8;
+    font-size: 20px;
+    font-weight: 400;
+    margin: 5px 0;
+  }
+
+  input{
+    width: 90%;
+    height: 40px;
+    border-radius: 7px;
+    outline: none;
+    border: 1px solid grey;
+    padding: 0 10px;
+  }
+}

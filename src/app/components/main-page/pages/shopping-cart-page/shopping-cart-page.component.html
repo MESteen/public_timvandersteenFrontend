@@ -1,0 +1,57 @@
+<div class="cart">
+  <div class="content">
+    <div class="row">
+      <div class="column" style="margin: auto 0 auto 0; flex-basis: 100%;">
+        <h5>Tim van der Steen</h5>
+        <h1>Shopping Cart</h1>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="this.cartItems.length > 0">
+  <div class="cart-container">
+    <div class="cart-items">
+      <app-cart-item
+        *ngFor="let cartEl of cartItems" [cartItem]="cartEl"
+      ></app-cart-item>
+    </div>
+  </div>
+  <div class="overzicht-container">
+    <div class="overzicht-items">
+      <div class="overzicht-content">
+        <div class="overzicht-left">
+          <h1>Overzicht</h1>
+          <div class="overzicht-list">
+            <ul>
+              <div *ngFor="let item of cartItems; let currentElementIndex">
+                <li *ngIf="currentElementIndex?.name != null">
+                  {{currentElementIndex?.name}}
+                </li>
+              </div>
+            </ul>
+          </div>
+        </div>
+        <div class="overzicht-right">
+          <div class="center">
+            <label>Interesse aangeven:</label>
+            <a class="btn" (click)="IntresseTonenInProducts()"> Contact us
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="empty-cart-container" *ngIf="this.cartItems.length < 1">
+  <div class="empty-container">
+    <h3>Shopping cart is empty...</h3>
+  </div>
+</div>
+
+<div class="footer">
+  <app-footer></app-footer>
+</div>
+
+<app-confirmation-dialog *ngIf="confirmationDialogService.showConfirmationDialog"></app-confirmation-dialog>

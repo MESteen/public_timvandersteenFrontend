@@ -1,0 +1,42 @@
+<div class="overlay" (click)="partnerDialogService.HideEditPartnerDialog()"></div>
+
+<div id="container" >
+  <div id="header">
+    Edit Partner
+  </div>
+  <div id="content">
+    <form [formGroup]="editPartnerForm">
+      <div class="content-container">
+        <div class="user-input-box">
+          <label for="naam">Partner naam</label>
+          <input type="text"
+                 id="naam"
+                 name="naam"
+                 placeholder="{{partnerDialogService.partnerToEdit.brand}}"
+                 formControlName="partnerNaam"/>
+        </div>
+        <div class="user-input-box">
+          <label for="kleur">Product image</label>
+          <input type="text"
+                 id="kleur"
+                 name="kleur"
+                 placeholder="{{partnerDialogService.partnerToEdit.image}}"
+                 formControlName="partnerImage"/>
+        </div>
+        <div class="user-input-box">
+          <label for="beschrijving">Partner Link</label>
+          <input type="text"
+                 id="beschrijving"
+                 name="beschrijving"
+                 placeholder="{{partnerDialogService.partnerToEdit.href}}"
+                 formControlName="partnerLink"/>
+        </div>
+      </div>
+      <div id="actions">
+        <a class="page-btn cancel" type="button" (click)="partnerDialogService.HideEditPartnerDialog()">Cancel</a>
+        <a class="page-btn" type="button" (click)="EditPartnerAction(editPartnerForm.value)">Confirm</a>
+      </div>
+    </form>
+  </div>
+
+</div>

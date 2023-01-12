@@ -1,0 +1,18 @@
+<div class="overlay" (click)="confirmationDialogService.HideConfirmationDialog()"></div>
+
+<div id="container" >
+  <div id="header">
+    <div class="header">
+      <h5>Weet je het zeker?</h5>
+    </div>
+  </div>
+  <div id="content">
+    <p>Als u 'Ja' kiest dan zal Tim te horen krijgen dat u interresse heeft.</p>
+    <p style="margin-top: 10px;">Tim zal hierna met u contact opzoeken om te kijken wat we voor elkaar kunnen betekenen.</p>
+  </div>
+
+  <div id="actions">
+    <a class="page-btn cancel" type="button" (click)="confirmationDialogService.HideConfirmationDialog()">Nee</a>
+    <a class="page-btn" type="button" (click)="SendOrder()">Ja</a>
+  </div>
+</div>

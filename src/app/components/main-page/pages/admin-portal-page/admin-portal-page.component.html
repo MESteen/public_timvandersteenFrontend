@@ -1,0 +1,55 @@
+<div class="admin-portal">
+
+  <div class="content">
+    <div class="row">
+      <div class="column">
+        <h5>Tim van der Steen</h5>
+        <h1>Orders</h1>
+      </div>
+      <div class="column video">
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="orders-container">
+
+  <div class="order-box">
+    <table>
+      <thead>
+      <tr>
+        <th>ID</th>
+        <th>Naam</th>
+        <th>Products</th>
+        <th>Creatie datum</th>
+        <th>Amount</th>
+        <th></th>
+      </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let orderEl of ordersList">
+          <td>{{orderEl.orderId}}</td>
+          <td class="user-box">
+            <app-order-user [userId]="orderEl.userId"></app-order-user>
+          </td>
+          <td>
+            <ul *ngFor="let productEl of orderEl.orderItems">
+              <li >{{productEl.name}}</li>
+            </ul>
+          </td>
+          <td>{{orderEl.createdDatum}}</td>
+          <td class="amount">€ {{orderEl.totalPrice}}</td>
+          <td class="delete">
+            <fa-icon [icon]="['fas', 'trash']" (click)="deleteOrderItemAction(orderEl)"></fa-icon>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div class="footer">
+  <app-footer></app-footer>
+</div>
+

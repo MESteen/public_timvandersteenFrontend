@@ -1,0 +1,16 @@
+<div *ngIf="sponsorItem?.productId != null" class="item-container">
+  <div class="img-box">
+    <fa-icon [icon]="['fas', $any(sponsorItem).icon ]" [style.color]="sponsorItem.kleur"></fa-icon>
+  </div>
+  <h3>{{sponsorItem.name}}</h3>
+  <p class="item-price"><span>{{sponsorItem.eenheid}}</span>€{{sponsorItem.price}}</p>
+  <a class="cart-btn" (click)="AddItemToCart(sponsorItem)">
+    <fa-icon [icon]="['fas', 'cart-shopping']"></fa-icon> Add to Cart
+  </a>
+  <div *ngIf="isAdmin()" class="button-box">
+    <fa-icon [icon]="['fas', 'pen-to-square']" (click)="productDialogService.ShowEditProductDialog(sponsorItem)"></fa-icon>
+    <fa-icon [icon]="['fas', 'trash-can' ]" (click)="DeleteProductItem(sponsorItem.productId)"></fa-icon>
+  </div>
+</div>
+
+<app-edit-product-dialog *ngIf="productDialogService.showEditProductDialog"></app-edit-product-dialog>

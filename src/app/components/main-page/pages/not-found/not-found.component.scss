@@ -1,0 +1,12 @@
+@import "../../../../styles/standard_page";
+
+.not-found{
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url('../../../../../assets/Images/about_page.webp');
+  background-position: center;
+  background-size: cover;
+  display: flex;
+
+  //standard_page styles...
+}

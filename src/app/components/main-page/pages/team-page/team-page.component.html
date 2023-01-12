@@ -1,0 +1,32 @@
+<div class="team">
+
+  <div class="content">
+    <div class="row">
+      <div class="column">
+        <h5>Tim van der Steen</h5>
+        <h1>Team</h1>
+      </div>
+      <div class="column video">
+        <video onclick="play(event)">
+          <source src="assets/Videos/haagschehole7.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="team-container">
+  <div class="coaches-title">
+    <h1>Coaches</h1>
+  </div>
+  <div class="team-content">
+    <app-coach-obj *ngFor="let coachEl of coachList" [coach]="coachEl"></app-coach-obj>
+  </div>
+</div>
+
+<div class="footer">
+  <app-footer></app-footer>
+</div>
+

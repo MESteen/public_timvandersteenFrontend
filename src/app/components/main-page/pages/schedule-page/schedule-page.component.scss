@@ -1,0 +1,47 @@
+@import "../../../../styles/standard_page";
+
+.schedule{
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url('../../../../../assets/Images/achtergrond2.jpg');
+  background-position: center;
+  background-size: cover;
+  display: flex;
+
+  //standard_page styles...
+}
+
+.schedule-container{
+  min-height: 400px;
+  background-color: #ececec;
+  border-bottom: 0.5px solid lightgrey;
+
+  .schedule-content{
+    width: 90%;
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+    text-align: center;
+    padding: 40px 0 40px 0;
+  }
+
+  .schedule-title{
+    padding: 20px;
+    h1{
+      text-align: center;
+      padding-top: 40px;
+      font-size: 46px;
+      font-family: "Old Standard TT", Georgia, Times New Roman, serif;
+    }
+
+  }
+}
+
+.footer{
+  background-color: #ececec;
+}

@@ -1,0 +1,25 @@
+
+<div *ngIf="tournooi?.wedstrijdId != null">
+  <a [attr.href]="adminUser ? null : tournooi.wedstrijdLink" >
+    <div class="tournament" [style.background-image]="'linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.4)), url(' + tournooi.wedstrijdBaanImage + ')'">
+      <div class="tournament-course">
+        <img src="{{tournooi.baanLogo}}">
+      </div>
+      <div class="tournament-info">
+        <h1>{{this.isoDate.getDate()}}/{{this.isoDate.getMonth() + 1}} </h1> <!--Month +1 ivm bugg-->
+        <h2>{{tournooi.wedstrijdNaam}}</h2>
+      </div>
+      <div *ngIf="tournooi.gespeeld" class="played-overlay">
+        <h3>Gespeeld</h3>
+      </div>
+      <div *ngIf="isAdmin()" class="button-box">
+        <fa-icon [icon]="['fas', 'pen-to-square']" (click)="scheduleDialogService.ShowEditScheduleDialog(tournooi)"></fa-icon>
+        <fa-icon [icon]="['fas', 'trash-can' ]" (click)="DeleteUpcomingGameItem(tournooi.wedstrijdId)"></fa-icon>
+      </div>
+    </div>
+  </a>
+</div>
+
+<app-edit-schedule-item-dialog *ngIf="scheduleDialogService.showEditScheduleDialog"></app-edit-schedule-item-dialog>
+
+

@@ -1,0 +1,78 @@
+<div class="about">
+
+  <div class="content">
+    <div class="row">
+      <div class="column">
+        <h5>Tim van der Steen</h5>
+        <h1>Career Highlights</h1>
+      </div>
+      <div class="column video">
+        <video onclick="play(event)" >
+          <source src="assets/Videos/balslaan.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<div class="highlights-container">
+  <div class="highlights">
+      <div class="nav">
+        <ul class="tabs">
+          <li><a [class.active] = "tabSelected == tabsEnum.NATIONAL" (click)="onClickTab(tabsEnum.NATIONAL)">Nationaal</a></li>
+          <li><a [class.active] = "tabSelected == tabsEnum.INTERNATIONAL" class="" (click)="onClickTab(tabsEnum.INTERNATIONAL)">Internationaal</a></li>
+        </ul>
+      </div>
+    <div *ngIf="tabSelected == tabsEnum.NATIONAL" class="tab nationaal">
+      Nationaal
+      <div class="results">
+        <div class="result">
+          T6 - NK Heren 2022
+        </div>
+        <div class="result">
+          1 - Kennemer Open 2019
+        </div>
+        <div class="result">
+          2 - NK Matchplay 2018
+        </div>
+        <div class="result">
+          1 - NK Foursome 2017 & 2018
+        </div>
+        <div class="result">
+          T3 - NK18 2017
+        </div>
+        <!--<div class="result">
+          2 - NK15 2017
+        </div>
+        <div class="result">
+          1 - NK12 2014
+        </div>-->
+      </div>
+    </div>
+    <div *ngIf="tabSelected == tabsEnum.INTERNATIONAL" class="tab internationaal">
+      Internationaal
+
+      <div class="results">
+        <div class="result">
+          2 Austrian Golf Tour 2022
+        </div>
+        <div class="result">
+          3 - Luxembourg Amateur 2022
+        </div>
+        <div class="result">
+          1 - Polish Championships 2021
+        </div>
+        <div class="result">
+          1 - Austrian Junior Golf Tour 2021
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="footer">
+  <app-footer></app-footer>
+</div>
+

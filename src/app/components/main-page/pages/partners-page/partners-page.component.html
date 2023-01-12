@@ -1,0 +1,31 @@
+<div class="partners">
+
+  <div class="content">
+    <div class="row">
+      <div class="column">
+        <h5>Tim van der Steen</h5>
+        <h1>Partners</h1>
+        <a *ngIf="isAdmin()" class="page-btn" (click)="partnerDialogService.ShowAddPartnerDialog()" type="button" >New Partner</a>
+      </div>
+      <div class="column video">
+        <video onclick="play(event)">
+          <source src="assets/Videos/mooieswing.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="partners-container">
+  <div class="partners-list">
+    <app-partner-item *ngFor="let partnerEl of partnersList" [partner]="partnerEl"></app-partner-item>
+  </div>
+</div>
+
+<div class="footer">
+  <app-footer></app-footer>
+</div>
+
+<app-add-partner-dialog *ngIf="partnerDialogService.showAddPartnerDialog"></app-add-partner-dialog>
+

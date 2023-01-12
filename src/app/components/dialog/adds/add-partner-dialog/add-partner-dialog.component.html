@@ -1,0 +1,43 @@
+<div class="overlay" (click)="partnerDialogService.HideAddPartnerDialog()"></div>
+
+<div id="container" >
+  <div id="header">
+    Add Partner
+  </div>
+  <div id="content">
+    <form [formGroup]="addPartnerForm">
+      <div class="content-container">
+        <div class="user-input-box">
+          <label for="naam">Partner naam</label>
+          <input type="text"
+                 id="naam"
+                 name="naam"
+                 placeholder="Vul naam in..."
+                 formControlName="partnerNaam"/>
+        </div>
+        <div class="user-input-box">
+          <label for="beschrijving">Partner Link</label>
+          <input type="text"
+                 id="beschrijving"
+                 name="beschrijving"
+                 placeholder="Vul beschrijving in..."
+                 formControlName="partnerLink"/>
+        </div>
+        <div class="user-input-box">
+          <label for="kleur">Product image</label>
+          <input type="text"
+                 id="kleur"
+                 name="kleur"
+                 placeholder="Vul kleur in..."
+                 formControlName="partnerImage"/>
+        </div>
+      </div>
+      <div id="actions">
+        <a class="page-btn cancel" type="button" (click)="partnerDialogService.HideAddPartnerDialog()">Cancel</a>
+        <a class="page-btn" type="button" (click)="AddPartnerAction(addPartnerForm.value)">Confirm</a>
+      </div>
+    </form>
+  </div>
+
+</div>
+

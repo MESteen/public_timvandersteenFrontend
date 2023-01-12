@@ -1,0 +1,93 @@
+<div class="overlay" (click)="scheduleDialogService.HideAddScheduleDialog()"></div>
+
+<div id="container" >
+  <div id="header">
+    Add Schedule
+  </div>
+  <div id="content">
+    <form [formGroup]="addScheduleForm">
+      <div class="content-container">
+          <div class="user-input-box">
+            <label for="courseName">Naam baan</label>
+            <input type="text"
+                   id="courseName"
+                   name="courseName"
+                   placeholder="Vul baan-naam in..."
+                   formControlName="courseName"/>
+          </div>
+          <div class="user-input-box">
+            <label for="wedstrijdName">Naam wedstrijd</label>
+            <input type="text"
+                   id="wedstrijdName"
+                   name="wedstrijdName"
+                   placeholder="Vul wedstrijd naam in..."
+                   formControlName="wedstrijdName"/>
+          </div>
+          <div class="user-input-box">
+            <label for="aantalDagen">aantal dagen</label>
+            <input type="text"
+                   id="aantalDagen"
+                   name="aantalDagen"
+                   placeholder="Vul aantal dagen v/d wedstrijd in..."
+                   formControlName="aantalDagen"/>
+          </div>
+          <div class="user-input-box">
+            <label for="wedstijdBaanImage">wedstijd baan foto</label>
+            <input type="text"
+                   id="wedstijdBaanImage"
+                   name="wedstijdBaanImage"
+                   placeholder="Link foto wedstrijd baan..."
+                   formControlName="wedstijdBaanImage"/>
+          </div>
+          <div class="user-input-box">
+            <label for="wedstrijdLink">Wedstrijd link</label>
+            <input type="text"
+                   id="wedstrijdLink"
+                   name="wedstrijdLink"
+                   placeholder="Link v/d wedstrijd..."
+                   formControlName="wedstrijdLink"/>
+          </div>
+          <div class="user-input-box">
+            <label for="baanLogo">Baan logo</label>
+            <input type="text"
+                   id="baanLogo"
+                   name="baanLogo"
+                   placeholder="Link v/d baan logo..."
+                   formControlName="baanLogo"/>
+        </div>
+        <div class="user-input-box">
+          <label>Datum wedstrijd</label>
+
+          <div class="datum-container">
+            <input type="number"
+                   name="datum"
+                   placeholder="year"
+                   formControlName="datumYears"/>
+            <div>-</div>
+            <input type="number"
+                   name="datum"
+                   placeholder="month"
+                   formControlName="datumMonths"/>
+            <div>-</div>
+            <input type="number"
+                   name="datum"
+                   placeholder="days"
+                   formControlName="datumDays"/>
+          </div>
+        </div>
+        <div class="user-input-box boolean">
+          <label for="played">Wedstrijd afgelopen</label>
+          <input type="checkbox"
+                 id="played"
+                 name="played"
+                 formControlName="played"/>
+        </div>
+      </div>
+      <div id="actions">
+        <a class="page-btn cancel" type="button" (click)="scheduleDialogService.HideAddScheduleDialog()">Cancel</a>
+        <a class="page-btn" type="button" (click)="AddScheduleAction(addScheduleForm.value)">Confirm</a>
+      </div>
+    </form>
+  </div>
+
+</div>

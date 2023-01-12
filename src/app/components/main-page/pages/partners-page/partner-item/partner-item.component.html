@@ -1,0 +1,9 @@
+<div class="partner">
+  <div *ngIf="isAdmin()" class="button-box">
+    <fa-icon [icon]="['fas', 'pen-to-square']" (click)="partnerDialogService.ShowEditPartnerDialog(partner)"></fa-icon>
+    <fa-icon [icon]="['fas', 'trash-can' ]" (click)="DeletePartner(partner.partnerId)"></fa-icon>
+  </div>
+  <img src="{{partner.image}}">
+</div>
+
+<app-edit-partner-dialog *ngIf="partnerDialogService.showEditPartnerDialog"></app-edit-partner-dialog>

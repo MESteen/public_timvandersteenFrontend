@@ -1,0 +1,17 @@
+.user-holder{
+  display: flex;
+  .icon{
+    display: flex;
+
+    fa-icon{
+      margin: auto;
+      font-size: 28px;
+    }
+  }
+
+  .info{
+    display: flex;
+    margin: auto auto auto 10px;
+    flex-direction: column;
+  }
+}

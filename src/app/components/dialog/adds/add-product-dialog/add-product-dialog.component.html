@@ -1,0 +1,66 @@
+<div class="overlay" (click)="productDialogService.HideEditProductDialog()"></div>
+
+<div id="container" >
+  <div id="header">
+    Add Product
+  </div>
+  <div id="content">
+    <form [formGroup]="addProductForm">
+      <div class="content-container">
+        <div class="user-input-box">
+          <label for="naam">Naam</label>
+          <input type="text"
+                 id="naam"
+                 name="naam"
+                 placeholder="Vul naam in..."
+                 formControlName="productName"/>
+        </div>
+        <div class="user-input-box">
+          <label for="beschrijving">Beschrijving</label>
+          <input type="text"
+                 id="beschrijving"
+                 name="beschrijving"
+                 placeholder="Vul beschrijving in..."
+                 formControlName="productDescription"/>
+        </div>
+        <div class="user-input-box">
+          <label for="kleur">Kleur</label>
+          <input type="text"
+                 id="kleur"
+                 name="kleur"
+                 placeholder="Vul kleur in..."
+                 formControlName="productColor"/>
+        </div>
+        <div class="user-input-box">
+          <label for="icon">Icon</label>
+          <input type="text"
+                 id="icon"
+                 name="icon"
+                 placeholder="Vul icon in..."
+                 formControlName="productIcon"/>
+        </div>
+        <div class="user-input-box">
+          <label for="eenheid">Eenheid</label>
+          <input type="text"
+                 id="eenheid"
+                 name="eenheid"
+                 placeholder="Vul eenheid in... (vb. per/jaar)"
+                 formControlName="productEenheid"/>
+        </div>
+        <div class="user-input-box">
+          <label for="prijs">Prijs</label>
+          <input type="number"
+                 id="prijs"
+                 name="prijs"
+                 placeholder="Vul prijs in..."
+                 formControlName="productPrice"/>
+        </div>
+      </div>
+      <div id="actions">
+        <a class="page-btn cancel" type="button" (click)="productDialogService.HideAddProductDialog()">Cancel</a>
+        <a class="page-btn" type="button" (click)="AddProductAction(addProductForm.value)">Confirm</a>
+      </div>
+    </form>
+  </div>
+
+</div>

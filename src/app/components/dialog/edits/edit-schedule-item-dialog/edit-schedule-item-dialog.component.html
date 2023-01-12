@@ -1,0 +1,95 @@
+<div class="overlay" (click)="scheduleDialogService.HideEditScheduleDialog()"></div>
+
+<div id="container" >
+  <div id="header">
+    Edit Schedule
+  </div>
+  <div id="content">
+    <form [formGroup]="editScheduleForm">
+      <div class="content-container">
+        <div class="user-input-box">
+          <label for="courseName">Naam baan</label>
+          <input type="text"
+                 id="courseName"
+                 name="courseName"
+                 placeholder="{{scheduleDialogService.scheduleToEdit.courseNaam}}"
+                 formControlName="courseName"/>
+        </div>
+        <div class="user-input-box">
+          <label for="wedstrijdName">Naam wedstrijd</label>
+          <input type="text"
+                 id="wedstrijdName"
+                 name="wedstrijdName"
+                 placeholder="{{scheduleDialogService.scheduleToEdit.wedstrijdNaam}}"
+                 formControlName="wedstrijdName"/>
+        </div>
+        <div class="user-input-box">
+          <label for="aantalDagen">aantal dagen</label>
+          <input type="text"
+                 id="aantalDagen"
+                 name="aantalDagen"
+                 placeholder="{{scheduleDialogService.scheduleToEdit.aantalDagen}}"
+                 formControlName="aantalDagen"/>
+        </div>
+        <div class="user-input-box">
+          <label for="wedstijdBaanImage">wedstijd baan foto</label>
+          <input type="text"
+                 id="wedstijdBaanImage"
+                 name="wedstijdBaanImage"
+                 placeholder="{{scheduleDialogService.scheduleToEdit.wedstrijdBaanImage}}"
+                 formControlName="wedstijdBaanImage"/>
+        </div>
+        <div class="user-input-box">
+          <label for="wedstrijdLink">Wedstrijd link</label>
+          <input type="text"
+                 id="wedstrijdLink"
+                 name="wedstrijdLink"
+                 placeholder="{{scheduleDialogService.scheduleToEdit.wedstrijdLink}}"
+                 formControlName="wedstrijdLink"/>
+        </div>
+        <div class="user-input-box">
+          <label for="baanLogo">Baan logo</label>
+          <input type="text"
+                 id="baanLogo"
+                 name="baanLogo"
+                 placeholder="{{scheduleDialogService.scheduleToEdit.baanLogo}}"
+                 formControlName="baanLogo"/>
+        </div>
+        <div class="user-input-box">
+          <label>Datum wedstrijd</label>
+
+          <div class="datum-container">
+            <input type="number"
+                   name="datum"
+                   placeholder="{{isoDate.getFullYear()}}"
+                   formControlName="datumYears"/>
+            <div>-</div>
+            <input type="number"
+                   name="datum"
+                   placeholder="{{isoDate.getMonth() + 1}}"
+                   formControlName="datumMonths"/>
+            <div>-</div>
+            <input type="number"
+                   name="datum"
+                   placeholder="{{isoDate.getDate()}}"
+                   formControlName="datumDays"/>
+          </div>
+        </div>
+        <div class="user-input-box boolean">
+          <label for="played">Wedstrijd afgelopen</label>
+          <input type="checkbox"
+                 id="played"
+                 name="played"
+                 [(ngModel)]="scheduleDialogService.scheduleToEdit.gespeeld" [checked]="true"
+                 formControlName="played"/>
+        </div>
+      </div>
+      <div id="actions">
+        <a class="page-btn cancel" type="button" (click)="scheduleDialogService.HideEditScheduleDialog()">Cancel</a>
+        <a class="page-btn" type="button" (click)="editScheduleAction(editScheduleForm.value)">Confirm</a>
+      </div>
+    </form>
+  </div>
+
+</div>
+

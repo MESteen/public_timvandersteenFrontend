@@ -1,0 +1,30 @@
+<div class="sponsoring">
+
+  <div class="content">
+    <div class="row">
+      <div class="column">
+        <h5>Tim van der Steen</h5>
+        <h1>Sponsoring</h1>
+        <a *ngIf="isAdmin()" class="page-btn" (click)="productDialogService.ShowAddProductDialog()" type="button">New Product</a>
+      </div>
+      <div class="column video">
+        <video onclick="play(event)">
+          <source src="assets/Videos/mooieswing.mp4" type="video/mp4">
+          Your browser does not support the video tag.
+        </video>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="product-container">
+  <div class="products">
+    <app-sponsor-item *ngFor="let sponsorEl of sponsorItems" [sponsorItem]="sponsorEl"></app-sponsor-item>
+  </div>
+</div>
+
+<div class="footer">
+  <app-footer></app-footer>
+</div>
+
+<app-add-product-dialog *ngIf="productDialogService.showAddProductDialog"></app-add-product-dialog>

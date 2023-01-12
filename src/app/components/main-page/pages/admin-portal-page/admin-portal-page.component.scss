@@ -1,0 +1,149 @@
+@import "../../../../styles/standard_page";
+
+.admin-portal{
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)), url('../../../../../assets/Images/ronaldmishit.jpg');
+  background-position: center;
+  background-size: cover;
+  display: flex;
+
+  //standard_page styles...
+}
+
+.orders-container{
+  min-height: 400px;
+  background-color: #ececec;
+  border-bottom: 0.5px solid lightgrey;
+  display: flex;
+
+  .order-box{
+    width: 60%;
+    margin: auto;
+    overflow: scroll;
+    padding: 40px 0;
+
+    /*   color variables */
+    $clr-primary: #81d4fa;
+    $clr-primary-light: #e1f5fe;
+    $clr-primary-dark: #4fc3f7;
+    $clr-gray100: #f9fbff;
+    $clr-gray150: #f4f6fb;
+    $clr-gray200: #eef1f6;
+    $clr-gray300: #e1e5ee;
+    $clr-gray400: #767b91;
+    $clr-gray500: #4f546c;
+    $clr-gray600: #2a324b;
+    $clr-gray700: #161d34;
+    $clr-pending: #fff0c2;
+    $clr-pending-font: #a68b00;
+    $clr-unpaid: #ffcdd2;
+    $clr-unpaid-font: #c62828;
+    $clr-paid: #c8e6c9;
+    $clr-paid-font: #388e3c;
+    $clr-link: #2962ff;
+
+    /*   border radius */
+    $radius: 0.2rem;
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    table {
+      border-collapse: collapse;
+      box-shadow: 0 5px 10px $clr-gray300;
+      background-color: white;
+      text-align: left;
+      overflow: hidden;
+      width: 100%;
+      border-radius: 8px;
+
+      thead {
+        box-shadow: 0 5px 10px $clr-gray300;
+        border-radius: 6px;
+      }
+
+      th {
+        padding: 1rem 2rem;
+        text-transform: uppercase;
+        letter-spacing: 0.1rem;
+        font-size: 0.7rem;
+        font-weight: 900;
+      }
+
+      td {
+        padding: 1rem 2rem;
+      }
+
+      a {
+        text-decoration: none;
+        color: $clr-link;
+      }
+
+      .status {
+        border-radius: $radius;
+        background-color: red;
+        padding: 0.2rem 1rem;
+        text-align: center;
+
+        &-pending {
+          background-color: $clr-pending;
+          color: $clr-pending-font;
+        }
+
+        &-paid {
+          background-color: $clr-paid;
+          color: $clr-paid-font;
+        }
+
+        &-unpaid {
+          background-color: $clr-unpaid;
+          color: $clr-unpaid-font;
+        }
+      }
+
+      .amount {
+        text-align: left;
+      }
+
+      .delete{
+        text-align: center;
+      }
+
+      //Color alternating rows
+      tr:nth-child(even) {
+        background-color: $clr-gray150;
+      }
+    }
+
+  }
+}
+
+.footer{
+  background-color: #ececec;
+}
+
+@media(max-width: 1455px) {
+  .orders-container{
+
+    .order-box{
+      width: 80%;
+    }
+  }
+
+}
+
+@media(max-width: 1150px) {
+  .orders-container{
+
+    .order-box{
+      width: 95%;
+    }
+  }
+
+}

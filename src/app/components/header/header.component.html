@@ -1,0 +1,46 @@
+<div class="navbar-desktop">
+  <img routerLink="" src="assets/Images/logo_tim.svg" class="logo">
+  <nav>
+    <ul>
+      <li *ngIf="isAdmin()"><a routerLink="/admin-portal">ADMIN PORTAL</a></li>
+      <li><a routerLink="">HOME</a></li>
+      <li><a routerLink="/about">ABOUT</a></li>
+      <li><a routerLink="/partners">PARTNERS</a></li>
+      <li><a routerLink="/schedule">SCHEDULE</a></li>
+      <li><a routerLink="/sponsoring">SPONSORING</a></li>
+      <li><a routerLink="/team">TEAM</a></li>
+      <li><a routerLink="/cart"><fa-icon [icon]="['fas', 'cart-shopping']"></fa-icon></a></li>
+      <li *ngIf="isCurrentUserEmpty()" ><a routerLink="/account"><fa-icon [icon]="['fas', 'user']"></fa-icon></a></li>
+      <li *ngIf="!isCurrentUserEmpty()"><a routerLink="/account" (click)="LogOff()"><fa-icon [icon]="['fas', 'right-from-bracket']"></fa-icon> LOG OFF</a></li>
+    </ul>
+  </nav>
+</div>
+
+<!--MOBILE-->
+<nav class="mobile-nav">
+  <div class="navbar">
+    <div class="container nav-container">
+      <input class="checkbox" type="checkbox" name="" id="" />
+      <div class="hamburger-lines">
+        <span class="line line1"></span>
+        <span class="line line2"></span>
+        <span class="line line3"></span>
+      </div>
+      <div class="logo">
+        <img routerLink="" src="assets/Images/logo_tim.svg">
+      </div>
+      <div class="menu-items">
+        <li *ngIf="isAdmin()"><a routerLink="/admin-portal">ADMIN PORTAL</a></li>
+        <li><a routerLink="">HOME</a></li>
+        <li><a routerLink="/about">ABOUT</a></li>
+        <li><a routerLink="/partners">PARTNERS</a></li>
+        <li><a routerLink="/schedule">SCHEDULE</a></li>
+        <li><a routerLink="/sponsoring">SPONSORING</a></li>
+        <li><a routerLink="/team">TEAM</a></li>
+        <li><a routerLink="/cart"><fa-icon [icon]="['fas', 'cart-shopping']"></fa-icon></a></li>
+        <li *ngIf="isCurrentUserEmpty()" ><a routerLink="/account"><fa-icon [icon]="['fas', 'user']"></fa-icon></a></li>
+        <li *ngIf="!isCurrentUserEmpty()"><a routerLink="/account" (click)="LogOff()"><fa-icon [icon]="['fas', 'right-from-bracket']"></fa-icon>  LOG OFF</a></li>
+      </div>
+    </div>
+  </div>
+</nav>

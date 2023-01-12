@@ -1,0 +1,185 @@
+$card-width: 220px;
+$card-height: 280px;
+
+.home{
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url('../../../../../assets/Images/home_page.jpg');
+  background-position: center;
+  background-size: cover;
+
+  .content{
+    width: 90%;
+    height: 100%;
+    margin: auto;
+    display: flex;
+    .row{
+      display: flex;
+      align-items: center;
+      margin: auto auto auto 10px;
+      width: inherit;
+      bottom: 40px;
+      .column{
+        flex-basis: 50%;
+        color: #fff;
+
+        &.text{
+          margin-top: 100px;
+        }
+
+        h1{
+          font-size: 55px;
+        }
+
+        p{
+          width: 90%;
+          font-size: 13px;
+          line-height: 15px;
+        }
+
+        .cards-holder{
+          height: calc(#{$card-height} + #{$card-height} + 40px);
+          width: calc(#{$card-width} + #{$card-width} + 60px);
+          float: right;
+        }
+      }
+    }
+  }
+}
+
+.cards-container{
+  display: none;
+  padding: 40px;
+  background-color: #ececec;
+  border-bottom: 0.5px solid lightgrey;
+
+  .card-list{
+    width: calc(#{$card-width} + #{$card-width} + 60px);
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+.card{
+  width: $card-width;
+  height: $card-height;
+  display: inline-block;
+  border-radius: 10px;
+  padding: 15px 25px;
+  box-sizing: border-box;
+  cursor: pointer;
+  margin: 10px 15px;
+  background-position: center;
+  background-size: cover;
+  transition: transform 0.5s;
+
+  h5{
+    font-size: 20px;
+    color: #fff;
+    text-shadow: 0 0 5px #999;
+  }
+
+  &.about{
+    background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('../../../../../assets/Images/mooie_eind_pos.jpeg');
+  }
+
+  &.partners{
+    background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('../../../../../assets/Images/instafoto.png');
+  }
+
+  &.team{
+    background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('../../../../../assets/Images/wedgein.jpg');
+  }
+
+  &.schedule{
+    background-image: linear-gradient(rgba(0,0,0,0.2),rgba(0,0,0,0.2)), url('../../../../../assets/Images/zwoelewegkijk.jpg');
+  }
+
+  &:hover{
+    transform: translateY(-10px);
+  }
+}
+
+.footer{
+  display: none;
+  background-color: #ececec;
+}
+
+@media(max-height: 725px) {
+
+  $card-width:170px;
+  $card-height:220px;
+    .home .content .row{
+      .column .cards-holder{
+          height: calc(#{$card-height} + #{$card-height} + 40px);
+          width: calc(#{$card-width} + #{$card-width} + 60px);
+        .card{
+          width: $card-width;
+          height: $card-height;
+        }
+      }
+    }
+}
+
+@media(max-height: 600px) {
+  .home .content .row{
+    top: 50%;
+    bottom: initial;
+    width: 70%;
+    .column {
+      flex-basis: initial;
+
+      h1{
+        font-size: 42px;
+      }
+      .cards-holder{
+        display: none;
+      }
+    }
+  }
+
+  .cards-container{
+    display: flex;
+  }
+
+  .footer{
+    display: block;
+  }
+}
+
+@media(max-width: 1250px) {
+    .home .content .row{
+      .column {
+        h1{
+          font-size: 42px;
+        }
+      }
+    }
+}
+
+@media(max-width: 1000px) {
+
+  .home .content .row{
+    top: 50%;
+    bottom: initial;
+    width: 70%;
+    padding-top: 120px;
+    .column {
+      flex-basis: initial;
+      .cards-holder{
+        display: none;
+      }
+    }
+  }
+
+  .cards-container{
+    display: flex;
+  }
+
+  .footer{
+    display: block;
+  }
+
+}

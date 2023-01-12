@@ -1,0 +1,73 @@
+@import "../../../../styles/standard_page";
+
+.sponsoring{
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(rgba(0,0,0,0.1),rgba(0,0,0,0.1)), url('../../../../../assets/Images/about_page.webp');
+  background-position: center;
+  background-size: cover;
+  display: flex;
+
+  //standard_page styles...
+}
+
+.product-container{
+  padding: 40px 0 40px 0;
+  width: 100%;
+  min-height: 500px;
+  background-color: #ececec;
+  display: flex;
+  border-bottom: 0.5px solid lightgrey;
+
+  .products{
+    width: 70%;
+    margin: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    row-gap: 30px;
+
+    app-sponsor-item{
+      width: 30%;
+    }
+  }
+}
+
+.footer{
+  background-color: #ececec;
+}
+
+@media(max-width: 1300px) {
+  .product-container{
+    .products{
+      width: 80%;
+    }
+  }
+
+}
+
+@media(max-width: 950px) {
+  .product-container{
+    .products{
+      width: 80%;
+
+      app-sponsor-item{
+        width: 45%;
+      }
+    }
+  }
+
+}
+
+@media(max-width: 650px) {
+  .product-container{
+    .products{
+      width: 90%;
+
+      app-sponsor-item{
+        width: 100%;
+      }
+    }
+  }
+
+}

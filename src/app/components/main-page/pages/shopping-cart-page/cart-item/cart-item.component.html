@@ -1,0 +1,22 @@
+
+<div *ngIf="cartItem?.productId != null" class="item-container">
+  <div class="img-box">
+    <fa-icon [icon]="['fas',  $any(cartItem).icon ]" [style.color]="cartItem.kleur"></fa-icon>
+    <div class="img-border">
+    </div>
+  </div>
+  <div class="item-content">
+    <div class="item-info">
+      <h3>{{cartItem.name}}</h3>
+      <p class="item-eenheid">{{cartItem.eenheid}}</p>
+      <p>{{cartItem.beschrijving}}</p>
+    </div>
+    <div class="item-price">
+      <p>€{{cartItem.price}}</p>
+    </div>
+    <div class="item-delete">
+      <fa-icon [icon]="['fas', 'trash']" (click)="deleteCartItemAction(cartItem.productId)"></fa-icon>
+    </div>
+  </div>
+
+</div>

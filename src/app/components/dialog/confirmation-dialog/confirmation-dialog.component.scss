@@ -1,0 +1,18 @@
+@import "../../../styles/dialog_style";
+
+#container{
+  height: 300px !important;
+  #header{
+    .header{
+      text-align: center;
+      width: 100%;
+    }
+  }
+  #content{
+    text-align: center;
+  }
+
+  #actions{
+    margin-bottom: 15px;
+  }
+}
